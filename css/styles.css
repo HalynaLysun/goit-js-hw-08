@@ -1,0 +1,33 @@
+body {
+    max-width: 1440px;
+    max-height: 696px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery {
+    list-style: none;
+    padding: 24px 156px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.gallery-image {
+    min-width: 360px;
+    max-height: 200px;
+}
+
+.modal {
+    min-width: 1112px;
+    min-height: 640px;
+
+}
+

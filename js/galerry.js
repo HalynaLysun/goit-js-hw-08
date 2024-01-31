@@ -65,7 +65,7 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('.gallery')
-console.log(galleryEl)
+
 
 const items = images
     .map(el => 
@@ -79,8 +79,36 @@ const items = images
   </a>
     </li>`
 )
-    .join('')
+  .join('')
 
+    
 galleryEl.insertAdjacentHTML('beforeend', items)
+
+galleryEl.addEventListener('click', (event) => {
+  if (event.target.dataset.source) {
+    // console.log(event.target.dataset.source)
+  }
+})
+
+const imagesAll = document.querySelectorAll('.gallery-image')
+
+imagesAll.forEach(img => {
+  img.addEventListener('click', (event) => {
+    console.log(event)
+// imagesAll.find(img => img.description)
+  })
+})
+
+// itemsAll.forEach(item => {
+//   item.addEventListener('click', (event) => {
+//     images.find(img => '${img.description}'))
+//     basicLightbox.create(
+//           `<div class="modal">
+//             <img src= alt=>
+//           </div>`
+//     ).show()
+//   })
+// });
+
 
 
