@@ -18,11 +18,24 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    transition: gap 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .gallery-image {
     min-width: 360px;
     max-height: 200px;
+    transition: min-width 500ms cubic-bezier(0.19, 1, 0.22, 1),
+    max-height 500ms cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+.gallery-image:hover {
+    min-width: 362px;
+    max-height: 205px;
+}
+
+.gallery:hover {
+    gap: 18px
 }
 
 .modal {

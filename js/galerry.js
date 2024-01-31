@@ -85,6 +85,7 @@ const items = images
 galleryEl.insertAdjacentHTML('beforeend', items)
 
 galleryEl.addEventListener('click', (event) => {
+  event.preventDefault()
   if (event.target.dataset.source) {
     event.target.dataset.source
   }
