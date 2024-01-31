@@ -26,8 +26,14 @@ img {
 }
 
 .modal {
-    min-width: 1112px;
-    min-height: 640px;
-
+    padding: 28px 0px;
+    max-width: 1112px;
 }
+
+.modal-img {
+    min-width: 1112px;
+    height: 640px;
+}
+
+
 

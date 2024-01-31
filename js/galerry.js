@@ -86,29 +86,25 @@ galleryEl.insertAdjacentHTML('beforeend', items)
 
 galleryEl.addEventListener('click', (event) => {
   if (event.target.dataset.source) {
-    // console.log(event.target.dataset.source)
+    event.target.dataset.source
   }
 })
 
-const imagesAll = document.querySelectorAll('.gallery-image')
+const itemsAll = galleryEl.querySelectorAll('.gallery-item')
 
-imagesAll.forEach(img => {
-  img.addEventListener('click', (event) => {
-    console.log(event)
-// imagesAll.find(img => img.description)
+
+itemsAll.forEach(item => {
+  item.addEventListener('click', (event) => {
+    const source = event.target.dataset.source
+    let info = images.find(img => img.original === source)
+    console.log(source)
+    basicLightbox.create(
+          `<div class="modal">
+            <img class='modal-img' src='${info.original}' alt='${info.description}'>
+          </div>`
+    ).show()
   })
-})
-
-// itemsAll.forEach(item => {
-//   item.addEventListener('click', (event) => {
-//     images.find(img => '${img.description}'))
-//     basicLightbox.create(
-//           `<div class="modal">
-//             <img src= alt=>
-//           </div>`
-//     ).show()
-//   })
-// });
+});
 
 
 
