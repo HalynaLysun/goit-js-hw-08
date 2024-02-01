@@ -69,13 +69,13 @@ const galleryEl = document.querySelector('.gallery')
 
 const items = images
     .map(el => 
-    `<li class="gallery-item">
-  <a class="gallery-link" href=${el.original}>
+    `<li class='gallery-item'>
+  <a class='gallery-link' href='${el.original}'>
     <img
-      class="gallery-image"
-      src=${el.preview}
-      data-source=${el.original}
-      alt=${el.description}/>
+      class='gallery-image'
+      src='${el.preview}'
+      data-source='${el.original}'
+      alt='${el.description}'/>
   </a>
     </li>`
 )
@@ -86,26 +86,18 @@ galleryEl.insertAdjacentHTML('beforeend', items)
 
 galleryEl.addEventListener('click', (event) => {
   event.preventDefault()
-  if (event.target.dataset.source) {
-    event.target.dataset.source
-  }
+
+  const source = event.target.dataset.source
+    let info = images.find(img => img.original === source)
+    basicLightbox.create(
+          `<div class='modal'>
+            <img class='modal-img' src='${info.original}' alt='${info.description}'>
+          </div>`
+    ).show()
 })
 
 const itemsAll = galleryEl.querySelectorAll('.gallery-item')
 
-
-itemsAll.forEach(item => {
-  item.addEventListener('click', (event) => {
-    const source = event.target.dataset.source
-    let info = images.find(img => img.original === source)
-    console.log(source)
-    basicLightbox.create(
-          `<div class="modal">
-            <img class='modal-img' src='${info.original}' alt='${info.description}'>
-          </div>`
-    ).show()
-  })
-});
 
 
 
